@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="green" data-mode="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anna — Yoga Rooted in Stillness</title>
+<meta name="description" content="Traditional, unhurried yoga taught by Anna — Hatha, Vinyasa, Yin, Pranayama, Mama Flow and private sessions in a small studio built on discipline, not hype.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Karla:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+  /* ===================== TOKENS — GREEN (default) ===================== */
+  :root{
+    --paper:#F1F5EA; --cream:#E9EFDF; --stone:#D9E2C9;
+    --sage:#7FA366; --sage-soft:#B7C9A2;
+    --moss:#3C6B3A; --moss-dark:#233B1E;
+    --wood:#77693F;
+    --parrot:#2E9E4C; --parrot-dark:#1F7A3A;
+    --deep:#233B1E; --on-deep:#F1F5EA;
+    --ink:#20281C; --ink-soft:#4B5744;
+    --line: rgba(32,40,28,0.14);
+    --shadow: 0 20px 60px rgba(31,45,25,0.14);
+  }
+
+  /* ===================== TOKENS — CYAN ===================== */
+  html[data-theme="cyan"]{
+    --paper:#EAF6F3; --cream:#DCEEE9; --stone:#C7E1D8;
+    --sage:#4FA396; --sage-soft:#A9D6CB;
+    --moss:#1F7A6C; --moss-dark:#123D35;
+    --wood:#4F7A70;
+    --parrot:#12B3A0; --parrot-dark:#0C7F70;
+    --deep:#123D35; --on-deep:#EAF6F3;
+    --ink:#152420; --ink-soft:#43554F;
+    --line: rgba(18,40,35,0.14);
+    --shadow: 0 20px 60px rgba(15,45,40,0.16);
+  }
+
+  /* ===================== TOKENS — RED/PINK/VIOLET ===================== */
+  html[data-theme="redpink"]{
+    --paper:#FBEFF3; --cream:#F5E1E9; --stone:#EDCEDA;
+    --sage:#C15C86; --sage-soft:#E3B4CB;
+    --moss:#7A2755; --moss-dark:#451A31;
+    --wood:#8C5E74;
+    --parrot:#D6336C; --parrot-dark:#A0264F;
+    --deep:#451A31; --on-deep:#FBEFF3;
+    --ink:#301620; --ink-soft:#6B4756;
+    --line: rgba(69,26,49,0.14);
+    --shadow: 0 20px 60px rgba(69,26,49,0.16);
+  }
+
+  /* ===================== TOKENS — YELLOW/ORANGE ===================== */
+  html[data-theme="yellow"]{
+    --paper:#FCF7E8; --cream:#F7EDC9; --stone:#F0DFA0;
+    --sage:#D9A441; --sage-soft:#EFCE7E;
+    --moss:#8A5A1E; --moss-dark:#4F3110;
+    --wood:#B06B2E;
+    --parrot:#E8862E; --parrot-dark:#B5651D;
+    --deep:#4F3110; --on-deep:#FCF7E8;
+    --ink:#2E2410; --ink-soft:#6B5834;
+    --line: rgba(79,49,16,0.14);
+    --shadow: 0 20px 60px rgba(79,49,16,0.16);
+  }
+
+  /* ===================== DARK MODE — per theme ===================== */
+  html[data-theme="green"][data-mode="dark"]{
+    --paper:#121C15; --cream:#182619; --stone:#20311F;
+    --ink:#EAF0E4; --ink-soft:#B9C4AE;
+    --moss-dark:#EAF0E4; --moss:#8FBF7E; --sage-soft:#2F4A33; --wood:#C9A15E;
+    --line: rgba(234,240,228,0.14);
+    --shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  html[data-theme="cyan"][data-mode="dark"]{
+    --paper:#0F1B19; --cream:#152522; --stone:#1C332E;
+    --ink:#E6F3F0; --ink-soft:#AFC9C3;
+    --moss-dark:#E6F3F0; --moss:#5FCBBA; --sage-soft:#1F433C; --wood:#7FB0A3;
+    --line: rgba(230,243,240,0.14);
+    --shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  html[data-theme="redpink"][data-mode="dark"]{
+    --paper:#1B1216; --cream:#241820; --stone:#33202A;
+    --ink:#F5E7ED; --ink-soft:#C9A9B6;
+    --moss-dark:#F5E7ED; --moss:#E37AA5; --sage-soft:#3A2130; --wood:#C98CA6;
+    --line: rgba(245,231,237,0.14);
+    --shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  html[data-theme="yellow"][data-mode="dark"]{
+    --paper:#1C160C; --cream:#261D10; --stone:#352712;
+    --ink:#F7EEDA; --ink-soft:#CBB68A;
+    --moss-dark:#F7EEDA; --moss:#E8B25C; --sage-soft:#3A2A12; --wood:#D9A462;
+    --line: rgba(247,238,218,0.14);
+    --shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
+
+  /* ---------- ACCESSIBILITY: FOCUS + SKIP LINK ---------- */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+    outline:2px solid var(--parrot); outline-offset:3px; border-radius:4px;
+  }
+  .skip-link{
+    position:absolute; left:-9999px; top:auto; z-index:1000;
+    background:var(--moss-dark); color:var(--paper); padding:12px 20px;
+    border-radius:8px; font-family:'Karla',sans-serif; font-size:14px; font-weight:600;
+  }
+  .skip-link:focus{ left:16px; top:16px; }
+  .sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:'Karla', sans-serif; font-weight:400; line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+  img,svg{display:block; max-width:100%;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 32px; }
+  h1,h2,h3,h4{ font-family:'Fraunces', serif; font-weight:500; color:var(--moss-dark); letter-spacing:-0.01em; }
+
+  .eyebrow{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Space Mono', monospace; font-size:12px;
+    letter-spacing:0.16em; text-transform:uppercase; color:var(--wood);
+    margin-bottom:18px;
+  }
+  .breath-dot{ width:7px; height:7px; border-radius:50%; background:var(--sage); flex-shrink:0; animation: breathe 6s ease-in-out infinite; }
+  @keyframes breathe{ 0%,100%{ transform:scale(0.7); opacity:0.5;} 50%{ transform:scale(1.3); opacity:1;} }
+  @media (prefers-reduced-motion: reduce){ .breath-dot, .breath-ring, .breath-ring-2, .breath-ring-3 { animation:none !important; } }
+
+  /* ---------- NAV ---------- */
+  header{ position:sticky; top:0; z-index:100; background:var(--parrot); box-shadow:0 2px 24px rgba(0,0,0,0.18); transition: background-color 0.4s ease; }
+  nav.wrap{ display:flex; align-items:center; justify-content:space-between; padding-top:18px; padding-bottom:18px; position:relative; }
+  .logo{ font-family:'Fraunces', serif; font-size:22px; font-style:italic; font-weight:500; color:#FAFAF7; }
+  .nav-links{ display:flex; gap:34px; font-size:14.5px; color:rgba(255,255,255,0.88); }
+  .nav-links a{ transition:color 0.25s; position:relative; }
+  .nav-links a:hover{ color:#fff; }
+  .nav-cta{ font-size:14px; padding:11px 22px; border:1px solid #FAFAF7; border-radius:100px; color:#FAFAF7; transition: all 0.25s; white-space:nowrap; }
+  .nav-cta:hover{ background:#FAFAF7; color:var(--parrot-dark); }
+  .menu-toggle{ display:none; background:none; border:none; cursor:pointer; padding:6px; color:#FAFAF7; }
+  .menu-toggle svg{ width:24px; height:24px; }
+  .menu-toggle .icon-close{ display:none; }
+  .menu-toggle[aria-expanded="true"] .icon-hamburger{ display:none; }
+  .menu-toggle[aria-expanded="true"] .icon-close{ display:block; }
+  @media(max-width:860px){
+    .nav-links{
+      display:none; position:absolute; top:100%; left:0; right:0;
+      flex-direction:column; align-items:flex-start; gap:4px;
+      background:var(--parrot); padding:8px 32px 22px; box-shadow:0 12px 28px rgba(0,0,0,0.18);
+    }
+    .nav-links.mobile-open{ display:flex; }
+    .nav-links a{ display:block; width:100%; padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.14); color:#FAFAF7; }
+    .menu-toggle{ display:block; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{ padding:64px 0 40px; overflow:hidden; position:relative; }
+  .hero::before, .hero::after{ content:""; position:absolute; border-radius:50%; filter:blur(60px); z-index:0; pointer-events:none; }
+  .hero::before{ width:420px; height:420px; background:radial-gradient(circle, rgba(127,163,102,0.35), rgba(127,163,102,0) 70%); top:-160px; left:-140px; }
+  .hero::after{ width:360px; height:360px; background:radial-gradient(circle, rgba(183,201,162,0.4), rgba(183,201,162,0) 70%); bottom:-120px; right:-100px; }
+  .hero .wrap{ position:relative; z-index:1; }
+  .hero-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center; }
+  .hero h1{ font-size:clamp(34px,4.6vw,58px); line-height:1.12; margin-bottom:26px; }
+  .hero h1 em{ font-style:italic; color:var(--wood); font-weight:400; }
+  .hero p.lede{ font-size:18px; color:var(--ink-soft); max-width:460px; margin-bottom:34px; }
+  .btn-row{ display:flex; gap:16px; flex-wrap:wrap; }
+  .btn-primary, .btn-secondary{ padding:15px 30px; border-radius:100px; font-size:15px; font-weight:600; transition:all 0.25s; display:inline-block; }
+  .btn-primary{ background:var(--moss-dark); color:var(--paper); }
+  .btn-primary:hover{ background:var(--moss); transform:translateY(-1px); }
+  .btn-secondary{ color:var(--moss-dark); border:1px solid var(--line); }
+  .btn-secondary:hover{ border-color:var(--moss-dark); }
+
+  .hero-art{ position:relative; border-radius:24px; overflow:hidden; box-shadow:var(--shadow); aspect-ratio:480/520; }
+  .hero-photo{ width:100%; height:100%; object-fit:cover; display:block; }
+  .hero-photo-tint{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,10,8,0.05) 0%, rgba(10,10,8,0.18) 55%, rgba(10,10,8,0.42) 100%); }
+  .hero-overlay{ position:absolute; inset:0; width:100%; height:100%; }
+  .ring{ fill:none; stroke:var(--on-deep); stroke-width:1.2; opacity:0.55; transform-origin:center; }
+  .breath-ring{ animation: ringPulse 6s ease-in-out infinite; }
+  .breath-ring-2{ animation: ringPulse 6s ease-in-out infinite; animation-delay:0.4s; }
+  .breath-ring-3{ animation: ringPulse 6s ease-in-out infinite; animation-delay:0.8s; }
+  @keyframes ringPulse{ 0%,100%{ opacity:0.15; transform:scale(0.96); } 50%{ opacity:0.55; transform:scale(1.04); } }
+
+  section{ padding:100px 0; }
+  .section-head{ max-width:640px; margin-bottom:56px; }
+  .section-head h2{ font-size:clamp(28px,3.4vw,42px); margin-bottom:16px;}
+  .section-head p{ color:var(--ink-soft); font-size:17px; }
+  .divider{ height:1px; background:var(--line); width:100%; }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{ display:grid; grid-template-columns:0.8fr 1.2fr; gap:64px; align-items:center; }
+  .portrait-medal{ position:relative; aspect-ratio:1/1.15; border-radius:24px; background:linear-gradient(160deg,var(--cream),var(--stone)); display:flex; align-items:center; justify-content:center; overflow:hidden; box-shadow:var(--shadow); }
+  .portrait-medal svg{ width:78%; }
+  .about-copy p{ margin-bottom:18px; color:var(--ink-soft); font-size:16.5px; }
+  .fact-strip{ display:flex; gap:36px; margin-top:36px; flex-wrap:wrap; border-top:1px solid var(--line); padding-top:28px; }
+  .fact .num{ font-family:'Fraunces', serif; font-size:26px; color:var(--moss-dark); }
+  .fact .lab{ font-size:13px; color:var(--wood); font-family:'Space Mono',monospace; letter-spacing:0.04em; }
+
+  /* ---------- PHILOSOPHY ---------- */
+  .philosophy{ background:var(--deep); color:var(--on-deep); transition: background-color 0.4s ease; }
+  .philosophy .eyebrow{ color:var(--sage-soft); }
+  .philosophy .section-head h2{ color:var(--on-deep); }
+  .philosophy .section-head p{ color:rgba(245,241,231,0.72); }
+  blockquote{ font-family:'Fraunces', serif; font-style:italic; font-weight:400; font-size:clamp(22px,2.6vw,32px); line-height:1.5; color:var(--on-deep); max-width:820px; margin:0 0 56px; }
+  .principles{ display:grid; grid-template-columns:repeat(3,1fr); gap:36px; }
+  .principle{ border-top:1px solid rgba(245,241,231,0.2); padding-top:22px; }
+  .principle h4{ color:var(--on-deep); font-size:19px; margin-bottom:10px; font-weight:500; }
+  .principle p{ color:rgba(245,241,231,0.68); font-size:15px; }
+
+  /* ---------- CLASSES ---------- */
+  .class-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .class-card{ background:var(--cream); border-radius:18px; padding:32px 28px; border:1px solid var(--line); transition: transform 0.3s, box-shadow 0.3s, background-color 0.4s; }
+  .class-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow); }
+  .class-tag{ font-family:'Space Mono', monospace; font-size:11.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--wood); background:rgba(139,115,85,0.12); padding:5px 11px; border-radius:100px; display:inline-block; margin-bottom:18px; }
+  .class-card h3{ font-size:21px; margin-bottom:10px; }
+  .class-card p{ color:var(--ink-soft); font-size:15px; }
+
+  /* ---------- BENEFITS ---------- */
+  .benefits-grid{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; }
+  .benefits-copy p{ color:var(--ink-soft); font-size:16.5px; margin-bottom:20px; }
+  .benefit-list{ display:flex; flex-direction:column; gap:0; }
+  .benefit-item{ display:flex; gap:18px; align-items:flex-start; padding:20px 0; border-bottom:1px solid var(--line); }
+  .benefit-item:first-child{ border-top:1px solid var(--line); }
+  .benefit-icon{ width:34px; height:34px; flex-shrink:0; border-radius:50%; background:var(--sage-soft); display:flex; align-items:center; justify-content:center; transition: background-color 0.4s; }
+  .benefit-icon svg{ width:16px; height:16px; }
+  .benefit-item h4{ font-size:16.5px; font-weight:600; color:var(--moss-dark); margin-bottom:4px;}
+  .benefit-item p{ font-size:14.5px; color:var(--ink-soft); }
+
+  /* ---------- JOURNEY ---------- */
+  .timeline{ position:relative; padding-left:2px; }
+  .timeline::before{ content:""; position:absolute; left:64px; top:6px; bottom:6px; width:1px; background:var(--line); }
+  .tl-item{ display:grid; grid-template-columns:64px 1fr; gap:36px; padding-bottom:48px; position:relative; }
+  .tl-item:last-child{ padding-bottom:0; }
+  .tl-year{ font-family:'Space Mono', monospace; font-size:14px; color:var(--wood); padding-top:2px; }
+  .tl-dot{ position:absolute; left:60px; top:4px; width:9px; height:9px; border-radius:50%; background:var(--moss); border:3px solid var(--paper); box-shadow:0 0 0 1px var(--line); }
+  .tl-item h4{ font-size:19px; margin-bottom:8px; }
+  .tl-item p{ color:var(--ink-soft); font-size:15.5px; max-width:560px; }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testi-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .testi-card{ background:var(--paper); border:1px solid var(--line); border-radius:18px; padding:32px 26px; transition: background-color 0.4s; }
+  .quote-mark{ font-family:'Fraunces', serif; font-size:44px; color:var(--sage); line-height:1; margin-bottom:8px; font-style:italic; }
+  .testi-card p.quote{ color:var(--ink); font-size:15.5px; margin-bottom:20px; }
+  .testi-name{ font-weight:700; font-size:14.5px; color:var(--moss-dark); }
+  .testi-role{ font-size:13px; color:var(--ink-soft); font-family:'Space Mono',monospace; }
+
+  /* ---------- BLOG ---------- */
+  .blog-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .blog-thumb{ height:180px; border-radius:16px; margin-bottom:20px; overflow:hidden; }
+  .blog-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .blog-cat{ font-family:'Space Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--wood); margin-bottom:10px; display:block; }
+  .blog-card h3{ font-size:19px; margin-bottom:10px; }
+  .blog-card p{ font-size:14.5px; color:var(--ink-soft); margin-bottom:12px; }
+  .blog-read{ font-size:13.5px; color:var(--moss); font-weight:600; }
+
+  /* ---------- GALLERY ---------- */
+  .gallery-grid{ display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:140px; gap:14px; }
+  .g-tile{ border-radius:14px; position:relative; overflow:hidden; display:flex; align-items:flex-end; padding:14px; }
+  .g-tile img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .g-tile::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,10,8,0) 45%, rgba(10,10,8,0.55) 100%); }
+  .g-tile span{ position:relative; z-index:1; font-family:'Space Mono',monospace; font-size:11.5px; color:rgba(255,255,255,0.92); text-transform:uppercase; letter-spacing:0.05em; text-shadow:0 1px 3px rgba(0,0,0,0.3); }
+  .g-tile.g1{ grid-column:span 2; grid-row:span 2; }
+  .g-tile.g2{ grid-column:span 2; }
+  .g-tile.g3{ grid-column:span 1; }
+  .g-tile.g4{ grid-column:span 1; grid-row:span 2; }
+  .g-tile.g5{ grid-column:span 2; }
+  .g-tile.g6{ grid-column:span 2; }
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:64px; }
+  .field{ margin-bottom:20px; }
+  .field label{ display:block; font-size:13.5px; font-weight:600; color:var(--moss-dark); margin-bottom:8px; }
+  .field input, .field select, .field textarea{ width:100%; padding:14px 16px; border-radius:10px; border:1px solid var(--line); background:var(--paper); font-family:'Karla', sans-serif; font-size:15px; color:var(--ink); }
+  .field input:focus, .field select:focus, .field textarea:focus{ outline:2px solid var(--sage); outline-offset:1px; }
+  .field textarea{ resize:vertical; min-height:110px; }
+  .contact-info{ background:var(--cream); border-radius:18px; padding:36px; height:fit-content; transition: background-color 0.4s; }
+  .contact-info h3{ font-size:20px; margin-bottom:20px; }
+  .info-row{ display:flex; gap:14px; margin-bottom:18px; align-items:flex-start; }
+  .info-row .lab{ font-family:'Space Mono',monospace; font-size:12px; color:var(--wood); text-transform:uppercase; letter-spacing:0.05em; width:70px; flex-shrink:0; padding-top:2px;}
+  .info-row .val{ font-size:15px; color:var(--ink-soft); }
+  .social-row{ display:flex; gap:12px; margin-top:26px; }
+  .social-btn{ width:40px; height:40px; border-radius:50%; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; transition:all 0.25s; }
+  .social-btn:hover{ background:var(--moss-dark); border-color:var(--moss-dark); }
+  .social-btn:hover svg{ stroke:var(--paper); }
+  .social-btn svg{ width:17px; height:17px; stroke:var(--moss-dark); transition:stroke 0.25s; }
+
+  /* ---------- FOOTER ---------- */
+  footer{ background:var(--deep); color:rgba(245,241,231,0.65); padding:56px 0 32px; transition: background-color 0.4s; }
+  .footer-top{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px; padding-bottom:32px; border-bottom:1px solid rgba(245,241,231,0.14); margin-bottom:24px; }
+  .footer-logo{ font-family:'Fraunces',serif; font-style:italic; font-size:22px; color:var(--on-deep); }
+  .footer-nav{ display:flex; gap:26px; font-size:14px; flex-wrap:wrap; }
+  .footer-nav a:hover{ color:var(--on-deep); }
+  .footer-bottom{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; font-size:13px; }
+
+  /* ---------- CONTROL PANEL ---------- */
+  .control-panel{
+    position:fixed; bottom:22px; right:22px; z-index:300;
+    display:flex; align-items:center; gap:12px;
+    background:var(--cream); border:1px solid var(--line); border-radius:100px;
+    padding:8px 12px; box-shadow:var(--shadow);
+    transition: background-color 0.4s, border-color 0.4s;
+  }
+  .cp-lang{ display:flex; gap:4px; background:var(--paper); border-radius:100px; padding:3px; }
+  .cp-lang-btn{ font-family:'Space Mono',monospace; font-size:11px; padding:5px 9px; border-radius:100px; border:none; background:transparent; color:var(--ink-soft); cursor:pointer; transition:all 0.2s; }
+  .cp-lang-btn.active{ background:var(--parrot); color:#fff; }
+  .cp-mode-btn{ width:30px; height:30px; border-radius:50%; border:1px solid var(--line); background:var(--paper); cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  .cp-mode-btn svg{ width:15px; height:15px; stroke:var(--ink); }
+  .icon-sun{ display:none; }
+  html[data-mode="dark"] .icon-sun{ display:block; }
+  html[data-mode="dark"] .icon-moon{ display:none; }
+  .cp-themes{ display:flex; gap:7px; }
+  .cp-swatch{ width:22px; height:22px; border-radius:50%; border:2px solid transparent; cursor:pointer; padding:0; }
+  .cp-swatch.active{ border-color:var(--ink); }
+  @media(max-width:560px){
+    .control-panel{ right:14px; bottom:14px; padding:6px 9px; gap:8px; }
+    .cp-swatch{ width:19px; height:19px; }
+  }
+
+  /* ---------- BACK TO TOP ---------- */
+  .back-to-top{
+    position:fixed; bottom:22px; left:22px; z-index:300;
+    width:46px; height:46px; border-radius:50%; border:1px solid var(--line);
+    background:var(--cream); color:var(--moss-dark); display:flex; align-items:center; justify-content:center;
+    cursor:pointer; opacity:0; visibility:hidden; transform:translateY(8px);
+    transition:opacity 0.3s, transform 0.3s, visibility 0.3s, background-color 0.4s;
+    box-shadow:var(--shadow);
+  }
+  .back-to-top svg{ width:18px; height:18px; }
+  .back-to-top.visible{ opacity:1; visibility:visible; transform:translateY(0); }
+  .back-to-top:hover{ background:var(--moss-dark); color:var(--paper); }
+  @media(max-width:560px){ .back-to-top{ left:14px; bottom:14px; width:40px; height:40px; } }
+
+  /* ---------- FORM VALIDATION STATES ---------- */
+  .field-error{ display:block; font-size:12.5px; color:#B3261E; margin-top:6px; min-height:1px; }
+  .field.error input, .field.error select, .field.error textarea{ border-color:#B3261E; }
+  .field.error label{ color:#B3261E; }
+  .form-success{ display:none; margin-top:14px; color:var(--moss); font-size:14px; }
+  .form-success.show{ display:block; }
+
+  /* ---------- FAQ ---------- */
+  .faq-list{ display:flex; flex-direction:column; gap:0; max-width:760px; }
+  .faq-item{ border-bottom:1px solid var(--line); }
+  .faq-item:first-child{ border-top:1px solid var(--line); }
+  .faq-question{
+    width:100%; text-align:left; background:none; border:none; cursor:pointer;
+    display:flex; align-items:center; justify-content:space-between; gap:20px;
+    padding:22px 0; font-family:'Fraunces',serif; font-size:18px; font-weight:500; color:var(--moss-dark);
+  }
+  .faq-question .faq-icon{ flex-shrink:0; width:20px; height:20px; position:relative; }
+  .faq-question .faq-icon::before, .faq-question .faq-icon::after{
+    content:""; position:absolute; background:var(--moss-dark); border-radius:2px; transition:transform 0.25s;
+  }
+  .faq-question .faq-icon::before{ width:14px; height:2px; top:9px; left:3px; }
+  .faq-question .faq-icon::after{ width:2px; height:14px; top:3px; left:9px; }
+  .faq-item.open .faq-question .faq-icon::after{ transform:rotate(90deg); }
+  .faq-answer{ max-height:0; overflow:hidden; transition:max-height 0.35s ease; }
+  .faq-answer p{ color:var(--ink-soft); font-size:15.5px; padding-bottom:22px; max-width:640px; }
+  .faq-item.open .faq-answer{ max-height:280px; }
+
+  /* ---------- PRICING ---------- */
+  .pricing-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; align-items:stretch; }
+  .price-card{ background:var(--cream); border:1px solid var(--line); border-radius:18px; padding:34px 28px; display:flex; flex-direction:column; transition:transform 0.3s, box-shadow 0.3s, background-color 0.4s; position:relative; }
+  .price-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow); }
+  .price-card.featured{ background:var(--deep); color:var(--on-deep); }
+  .price-card.featured .price-tag, .price-card.featured .price-amount, .price-card.featured h3{ color:var(--on-deep); }
+  .price-card.featured .price-feature{ color:rgba(245,241,231,0.78); }
+  .price-badge{ position:absolute; top:-12px; right:28px; background:var(--parrot); color:#fff; font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.06em; text-transform:uppercase; padding:5px 12px; border-radius:100px; }
+  .price-card h3{ font-size:20px; margin-bottom:6px; }
+  .price-amount{ font-family:'Fraunces',serif; font-size:38px; color:var(--moss-dark); margin-bottom:4px; }
+  .price-amount span{ font-family:'Karla',sans-serif; font-size:14px; font-weight:400; color:var(--ink-soft); }
+  .price-desc{ font-size:14px; color:var(--ink-soft); margin-bottom:22px; }
+  .price-card.featured .price-desc{ color:rgba(245,241,231,0.78); }
+  .price-features{ list-style:none; display:flex; flex-direction:column; gap:12px; margin-bottom:28px; flex-grow:1; }
+  .price-feature{ display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:var(--ink-soft); }
+  .price-feature svg{ width:16px; height:16px; flex-shrink:0; margin-top:2px; stroke:var(--moss); }
+  .price-card .btn-primary, .price-card .btn-secondary{ text-align:center; }
+  .price-card.featured .btn-secondary{ color:var(--on-deep); border-color:rgba(245,241,231,0.4); }
+
+  /* ---------- SCHEDULE ---------- */
+  .schedule-table{ width:100%; border-collapse:collapse; font-size:14.5px; }
+  .schedule-table caption{ text-align:left; font-size:13px; color:var(--wood); font-family:'Space Mono',monospace; margin-bottom:14px; }
+  .schedule-table th, .schedule-table td{ padding:14px 12px; text-align:left; border-bottom:1px solid var(--line); }
+  .schedule-table thead th{ font-family:'Space Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; color:var(--wood); font-weight:600; }
+  .schedule-table tbody th{ font-weight:600; color:var(--moss-dark); white-space:nowrap; }
+  .schedule-table tbody tr:hover{ background:var(--cream); }
+  .schedule-wrap{ overflow-x:auto; }
+  @media(max-width:700px){ .schedule-table{ min-width:640px; } }
+
+  /* ---------- NEWSLETTER ---------- */
+  .newsletter{ background:var(--cream); border-radius:24px; padding:52px 48px; display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap; transition:background-color 0.4s; }
+  .newsletter-copy h3{ font-size:24px; margin-bottom:8px; }
+  .newsletter-copy p{ color:var(--ink-soft); font-size:15px; max-width:420px; }
+  .newsletter-form{ display:flex; gap:10px; flex-wrap:wrap; flex-shrink:0; }
+  .newsletter-form input{ padding:14px 18px; border-radius:100px; border:1px solid var(--line); background:var(--paper); font-family:'Karla',sans-serif; font-size:14.5px; color:var(--ink); min-width:240px; }
+  .newsletter-form button{ border:none; cursor:pointer; }
+  .newsletter-success{ display:none; font-size:13.5px; color:var(--moss); margin-top:8px; }
+  .newsletter-success.show{ display:block; }
+  @media(max-width:700px){ .newsletter{ padding:38px 28px; } .newsletter-form{ width:100%; } .newsletter-form input{ flex:1; min-width:0; } }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:900px){
+    .hero-grid, .about-grid, .benefits-grid, .contact-grid{ grid-template-columns:1fr; }
+    .hero-art{ order:-1; max-width:340px; margin:0 auto; }
+    .principles, .class-grid, .testi-grid, .blog-grid, .pricing-grid{ grid-template-columns:repeat(2,1fr); }
+    .gallery-grid{ grid-template-columns:repeat(2,1fr); }
+    .g-tile.g1,.g-tile.g4{ grid-row:span 1; }
+    .newsletter{ padding:44px; }
+  }
+  @media(max-width:560px){
+    .wrap{ padding:0 20px; }
+    section{ padding:70px 0; }
+    .principles, .class-grid, .testi-grid, .blog-grid, .pricing-grid{ grid-template-columns:1fr; }
+    .gallery-grid{ grid-template-columns:repeat(2,1fr); }
+    .fact-strip{ gap:24px; }
+    .timeline::before{ left:44px; }
+    .tl-item{ grid-template-columns:44px 1fr; gap:20px; }
+    .tl-dot{ left:40px; }
+  }
+
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link" data-i18n="skip_link">Skip to content</a>
+
+<header>
+  <nav class="wrap" aria-label="Primary">
+    <div class="logo">Anna</div>
+    <div class="nav-links" id="navLinks">
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#philosophy" data-i18n="nav_philosophy">Philosophy</a>
+      <a href="#classes" data-i18n="nav_classes">Classes</a>
+      <a href="#schedule" data-i18n="nav_schedule">Schedule</a>
+      <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
+      <a href="#journey" data-i18n="nav_journey">Journey</a>
+      <a href="#blog" data-i18n="nav_blog">Journal</a>
+      <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+    </div>
+    <a href="#contact" class="nav-cta" data-i18n="nav_cta">Get in touch</a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <svg class="icon-hamburger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="breath-dot"></span><span data-i18n="hero_eyebrow">Traditional yoga · Rooted practice</span></div>
+      <h1 data-i18n="hero_h1">Yoga isn't a performance.<br>It's a return — <em>breath by breath.</em></h1>
+      <p class="lede" data-i18n="hero_lede">I'm Anna. I've spent most of my adult life on the mat, and the rest of it learning that discipline is kinder than motivation. I teach the practice that actually holds up over years, not the one built for a highlight reel.</p>
+      <div class="btn-row">
+        <a href="#contact" class="btn-primary" data-i18n="hero_btn_primary">Book a class</a>
+        <a href="#about" class="btn-secondary" data-i18n="hero_btn_secondary">Read her story</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img class="hero-photo" src="https://images.pexels.com/photos/14025562/pexels-photo-14025562.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Woman practising yoga on a mountain peak at sunrise" data-i18n-alt="hero_photo_alt" loading="eager" fetchpriority="high" decoding="async" width="480" height="520">
+      <div class="hero-photo-tint"></div>
+      <svg class="hero-overlay" viewBox="0 0 480 520" xmlns="http://www.w3.org/2000/svg">
+        <circle class="ring breath-ring" cx="240" cy="190" r="66"/>
+        <circle class="ring breath-ring-2" cx="240" cy="190" r="88"/>
+        <circle class="ring breath-ring-3" cx="240" cy="190" r="110"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="portrait-medal">
+      <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="100" cy="205" rx="80" ry="14" fill="var(--stone)" opacity="0.4"/>
+        <path d="M100 10 C60 10 40 45 42 80 C43 100 50 112 46 130 C64 150 60 165 55 190 L145 190 C140 165 136 150 154 130 C150 112 157 100 158 80 C160 45 140 10 100 10 Z" fill="var(--sage)"/>
+        <circle cx="100" cy="70" r="34" fill="var(--paper)"/>
+        <path d="M100 24 C118 24 128 42 126 60 C110 52 90 52 74 60 C72 42 82 24 100 24 Z" fill="var(--moss)"/>
+        <path d="M70 150 Q100 168 130 150" stroke="var(--moss)" stroke-width="2" fill="none" opacity="0.5"/>
+      </svg>
+    </div>
+    <div class="about-copy">
+      <div class="eyebrow"><span class="breath-dot"></span><span data-i18n="about_eyebrow">About Anna</span></div>
+      <h2 data-i18n="about_h2">Practical, patient, and not remotely interested in impressing you.</h2>
+      <p data-i18n="about_p1">I started practicing yoga in my early twenties, mostly to fix a bad back and a worse temper. It became something else entirely — a way of paying attention. These days I teach in a small studio, and I still practice every morning before anyone else in the house is awake.</p>
+      <p data-i18n="about_p2">I'm married, I have one child, and my life looks a lot like yours: full of deadlines, dishes, and difficult conversations. I don't teach yoga as an escape from that. I teach it as a way to stay steady inside it. 😄</p>
+      <p data-i18n="about_p3">I won't tell you your chakras are blocked. I will tell you, gently, if your ego is doing the pose instead of your body — and how to fix that.</p>
+      <div class="fact-strip">
+        <div class="fact"><div class="num" data-i18n="fact1_num">11+</div><div class="lab" data-i18n="fact1_lab">years teaching</div></div>
+        <div class="fact"><div class="num" data-i18n="fact2_num">500+</div><div class="lab" data-i18n="fact2_lab">students guided</div></div>
+        <div class="fact"><div class="num" data-i18n="fact3_num">3</div><div class="lab" data-i18n="fact3_lab">teacher trainings</div></div>
+        <div class="fact"><div class="num" data-i18n="fact4_num">1</div><div class="lab" data-i18n="fact4_lab">very patient family</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PHILOSOPHY ================= -->
+<section id="philosophy" class="philosophy">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="breath-dot"></span><span data-i18n="philosophy_eyebrow">Her Philosophy</span></div>
+      <h2 data-i18n="philosophy_h2">Traditional yoga, not trend yoga.</h2>
+      <p data-i18n="philosophy_p">No playlists engineered to make you cry. No "30-day transformation." Just the practice, done properly, for as long as it takes.</p>
+    </div>
+    <blockquote data-i18n="philosophy_quote">"Adult dreams need adult discipline. Nobody's flexibility improved because they wanted it badly enough — it improved because they showed up on the Tuesdays they didn't feel like it."</blockquote>
+    <div class="principles">
+      <div class="principle">
+        <h4 data-i18n="principle1_h">Discipline over motivation</h4>
+        <p data-i18n="principle1_p">Motivation is weather. Discipline is climate. I build practices people can actually keep for years, not weeks.</p>
+      </div>
+      <div class="principle">
+        <h4 data-i18n="principle2_h">Awareness before achievement</h4>
+        <p data-i18n="principle2_p">A pose that hurts your knee isn't advanced — it's just wrong for you today. We train attention first, shapes second.</p>
+      </div>
+      <div class="principle">
+        <h4 data-i18n="principle3_h">Time is part of the method</h4>
+        <p data-i18n="principle3_p">Real change is slow and mostly invisible while it's happening. I'd rather tell you that now than let a studio's marketing tell you otherwise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLASSES ================= -->
+<section id="classes">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="breath-dot"></span><span data-i18n="classes_eyebrow">Classes</span></div>
+      <h2 data-i18n="classes_h2">Find the practice that fits your actual life.</h2>
+      <p data-i18n="classes_p">Small groups, real attention, and classes built around how bodies age and change — not a one-size-fits-all sequence.</p>
+    </div>
+    <div class="class-grid">
+      <div class="class-card">
+        <span class="class-tag" data-i18n="class1_tag">Foundational</span>
+        <h3 data-i18n="class1_h">Hatha Yoga</h3>
+        <p data-i18n="class1_p">Slow, precise, and unglamorous in the best way. We hold postures long enough to actually learn something from them.</p>
+      </div>
+      <div class="class-card">
+        <span class="class-tag" data-i18n="class2_tag">Dynamic</span>
+        <h3 data-i18n="class2_h">Vinyasa Flow</h3>
+        <p data-i18n="class2_p">Breath-linked movement for people who want to build strength and stamina without turning the mat into a gym.</p>
+      </div>
+      <div class="class-card">
+        <span class="class-tag" data-i18n="class3_tag">Restorative</span>
+        <h3 data-i18n="class3_h">Yin & Deep Stretch</h3>
+        <p data-i18n="class3_p">Long, supported holds that work into connective tissue and a nervous system that's been running too hot for too long.</p>
+      </div>
+      <div class="class-card">
+        <span class="class-tag" data-i18n="class4_tag">Breathwork</span>
+        <h3 data-i18n="class4_h">Pranayama Practice</h3>
+        <p data-i18n="class4_p">Breathing is the fastest lever we have over the nervous system. This class is quiet, seated, and more useful than it looks.</p>
+      </div>
+      <div class="class-card">
+        <span class="class-tag" data-i18n="class5_tag">Life stage</span>
+        <h3 data-i18n="class5_h">Mama Flow</h3>
+        <p data-i18n="class5_p">For pregnant and postpartum students. I built this class from my own recovery — it's realistic about what a changed body needs.</p>
+      </div>
+      <div class="class-card">
+        <span class="class-tag" data-i18n="class6_tag">1:1</span>
+        <h3 data-i18n="class6_h">Private Sessions</h3>
+        <p data-i18n="class6_p">For injuries, specific goals, or people who'd rather work through things without an audience. Fully tailored.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SCHEDULE ================= -->
+<section id="schedule">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="breath-dot"></span><span data-i18n="schedule_eyebrow">Weekly Schedule</span></div>
+      <h2 data-i18n="schedule_h2">When to find us on the mat.</h2>
+      <p data-i18n="schedule_p">Small groups, fixed times, no drop-in chaos. Private sessions are booked separately by request.</p>
+    </div>
+    <div class="schedule-wrap">
+      <table class="schedule-table">
+        <caption data-i18n="schedule_caption">All times local · studio doors open 10 minutes early</caption>
+        <thead>
+          <tr>
+            <th scope="col" data-i18n="schedule_col_day">Day</th>
+            <th scope="col" data-i18n="schedule_col_morning">Morning</th>
+            <th scope="col" data-i18n="schedule_col_evening">Evening</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row" data-i18n="schedule_tue">Tuesday</th><td data-i18n="schedule_tue_am">7:00 — Hatha Yoga</td><td data-i18n="schedule_tue_pm">18:30 — Vinyasa Flow</td></tr>
+          <tr><th scope="row" data-i18n="schedule_wed">Wednesday</th><td data-i18n="schedule_wed_am">7:00 — Pranayama Practice</td><td data-i18n="schedule_wed_pm">18:30 — Yin & Deep Stretch</td></tr>
+          <tr><th scope="row" data-i18n="schedule_thu">Thursday</th><td data-i18n="schedule_thu_am">7:00 — Hatha Yoga</td><td data-i18n="schedule_thu_pm">18:30 — Mama Flow</td></tr>
+          <tr><th scope="row" data-i18n="schedule_fri">Friday</th><td data-i18n="schedule_fri_am">7:00 — Vinyasa Flow</td><td data-i18n="schedule_fri_pm">18:30 — Yin & Deep Stretch</td></tr>
+          <tr><th scope="row" data-i18n="schedule_sat">Saturday</th><td data-i18n="schedule_sat_am">9:00 — Hatha Yoga</td><td data-i18n="schedule_sat_pm">By request — Private Sessions</td></tr>
+          <tr><th scope="row" data-i18n="schedule_sun">Sunday</th><td colspan="2" data-i18n="schedule_sun_note">Retreats only — see Journal for upcoming dates</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= BENEFITS ================= -->
+<section>
+  <div class="wrap benefits-grid">
+    <div class="benefits-copy">
+      <div class="eyebrow"><span class="breath-dot"></span><span data-i18n="benefits_eyebrow">Why it works</span></div>
+      <h2 data-i18n="benefits_h2">What changes when you actually stay consistent.</h2>
+      <p data-i18n="benefits_p1">None of this happens after one class. It happens after the fortieth one, when you stop noticing the practice and start noticing your life.</p>
+      <p data-i18n="benefits_p2">I've watched this pattern hold for over a decade of teaching — it's not mystical, it's just what regular, well-taught movement and breath do to a person over time.</p>
+    </div>
+    <div class="benefit-list">
+      <div class="benefit-item">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--moss-dark)" stroke-width="2"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 3 5 6.5 5c2 0 3.5 1 5.5 3 2-2 3.5-3 5.5-3C21 5 23.5 8.5 21.5 12.5 19 16.65 12 21 12 21z"/></svg></div>
+        <div><h4 data-i18n="benefit1_h">Physical resilience</h4><p data-i18n="benefit1_p">Stronger joints, better posture, fewer of the small injuries that come from a stiff, unaware body.</p></div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--moss-dark)" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
+        <div><h4 data-i18n="benefit2_h">Genuine stress relief</h4><p data-i18n="benefit2_p">Not a temporary escape — a nervous system that recovers faster after the hard days.</p></div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--moss-dark)" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg></div>
+        <div><h4 data-i18n="benefit3_h">Mental clarity</h4><p data-i18n="benefit3_p">Fewer reactive decisions. More space between what happens and how you respond to it.</p></div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--moss-dark)" stroke-width="2"><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/><circle cx="12" cy="8" r="4"/></svg></div>
+        <div><h4 data-i18n="benefit4_h">Inner balance</h4><p data-i18n="benefit4_p">A steadier relationship with the parts of life you can't control — which, honestly, is most of it.</p></div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--moss-dark)" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <div><h4 data-i18n="benefit5_h">Real community</h4><p data-i18n="benefit5_p">Small classes mean you're recognized, not just counted — that matters more than people expect.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JOURNEY ================= -->
+<section id="journey">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="breath-dot"></span><span data-i18n="journey_eyebrow">Her Journey</span></div>
+      <h2 data-i18n="journey_h2">A practice built over years, not a weekend certification.</h2>
+      <p data-i18n="journey_p">The honest version — including the parts that weren't graceful.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year" data-i18n="tl1_year">2011</div>
+        <div class="tl-dot"></div>
+        <div><h4 data-i18n="tl1_h">First class, wrong reasons</h4><p data-i18n="tl1_p">Started practicing to fix a bad back. Stayed because it was the only hour of the week my mind actually went quiet.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year" data-i18n="tl2_year">2014</div>
+        <div class="tl-dot"></div>
+        <div><h4 data-i18n="tl2_h">200-hour teacher training</h4><p data-i18n="tl2_p">Realized halfway through that I was more interested in why people quit their practice than in how to do a deeper backbend.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year" data-i18n="tl3_year">2016</div>
+        <div class="tl-dot"></div>
+        <div><h4 data-i18n="tl3_h">First students of my own</h4><p data-i18n="tl3_p">Small living-room classes. No branding, no schedule app — just people who kept coming back.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year" data-i18n="tl4_year">2020</div>
+        <div class="tl-dot"></div>
+        <div><h4 data-i18n="tl4_h">Became a mother</h4><p data-i18n="tl4_p">Learned more about patience and discipline in that first year than in a decade of asana practice. Built the Mama Flow class out of that recovery.</p></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year" data-i18n="tl5_year">Now</div>
+        <div class="tl-dot"></div>
+        <div><h4 data-i18n="tl5_h">Teaching, still learning</h4><p data-i18n="tl5_p">Running a small studio, still practicing every morning, still occasionally arguing with my husband about whose turn it is to do the dishes. 🤷🏽‍♀️</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="breath-dot"></span><span data-i18n="pricing_eyebrow">Pricing</span></div>
+      <h2 data-i18n="pricing_h2">Simple pricing, no hidden tiers.</h2>
+      <p data-i18n="pricing_p">Pick what fits how often you'll actually come — you can always change later.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3 data-i18n="price1_h">Drop-in</h3>
+        <div class="price-amount" data-i18n="price1_amount">$22<span data-i18n="price1_unit"> / class</span></div>
+        <p class="price-desc" data-i18n="price1_desc">For visitors and the occasionally spontaneous.</p>
+        <ul class="price-features">
+          <li class="price-feature"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="price1_f1">Any single group class</span></li>
+          <li class="price-feature"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="price1_f2">Mat and props included</span></li>
+          <li class="price-feature"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="price1_f3">No commitment</span></li>
+        </ul>
+        <a href="#contact" class="btn-secondary" data-i18n="price1_cta">Book a class</a>
+      </div>
+      <div class="price-card featured">
+        <span class="price-badge" data-i18n="price2_badge">Most popular</span>
+        <h3 data-i18n="price2_h">Monthly Unlimited</h3>
+        <div class="price-amount" data-i18n="price2_amount">$95<span data-i18n="price2_unit"> / month</span></div>
+        <p class="price-desc" data-i18n="price2_desc">For students building an actual practice.</p>
+        <ul class="price-features">
+          <li class="price-feature"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="price2_f1">Unlimited group classes</span></li>
+          <li class="price-feature"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="price2_f2">Priority booking</span></li>
+          <li class="price-feature"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="price2_f3">10% off private sessions</span></li>
+        </ul>
+        <a href="#contact" class="btn-primary" data-i18n="price2_cta">Start this month</a>
+      </div>
+      <div class="price-card">
+        <h3 data-i18n="price3_h">Private Sessions</h3>
+        <div class="price-amount" data-i18n="price3_amount">$70<span data-i18n="price3_unit"> / session</span></div>
+        <p class="price-desc" data-i18n="price3_desc">For injuries, specific goals, or 1:1 attention.</p>
+        <ul class="price-features">
+          <li class="price-feature"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="price3_f1">Fully tailored plan</span></li>
+          <li class="price-feature"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="price3_f2">Flexible scheduling</span></li>
+          <li class="price-feature"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="price3_f3">In studio or online</span></li>
+        </ul>
+        <a href="#contact" class="btn-secondary" data-i18n="price3_cta">Request a session</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="breath-dot"></span><span data-i18n="testimonials_eyebrow">Testimonials</span></div>
+      <h2 data-i18n="testimonials_h2">What students actually say — no highlight reel required.</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="quote-mark">“</div>
+        <p class="quote" data-i18n="t1_quote">Anna doesn't do the "you're perfect exactly as you are" thing. She tells you what's actually happening in the pose. It's more useful than it sounds.</p>
+        <div class="testi-name" data-i18n="t1_name">Ekaterina</div>
+        <div class="testi-role" data-i18n="t1_role">Vinyasa Flow, 2 years</div>
+      </div>
+      <div class="testi-card">
+        <div class="quote-mark">“</div>
+        <p class="quote" data-i18n="t2_quote">I came for a bad shoulder and stayed for the Tuesday pranayama sessions. My whole week is calmer since I started.</p>
+        <div class="testi-name" data-i18n="t2_name">Dmitri</div>
+        <div class="testi-role" data-i18n="t2_role">Pranayama Practice, 8 months</div>
+      </div>
+      <div class="testi-card">
+        <div class="quote-mark">“</div>
+        <p class="quote" data-i18n="t3_quote">Mama Flow got me back into my body after my daughter was born without any of the "bounce back" pressure. Anna's been through it herself, and it shows.</p>
+        <div class="testi-name" data-i18n="t3_name">Olga</div>
+        <div class="testi-role" data-i18n="t3_role">Mama Flow, 1 year</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOG ================= -->
+<section id="blog">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="breath-dot"></span><span data-i18n="blog_eyebrow">From the Journal</span></div>
+      <h2 data-i18n="blog_h2">Writing on practice, psychology, and staying human.</h2>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-thumb"><img src="https://images.pexels.com/photos/2847360/pexels-photo-2847360.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Person practising yoga on top of a mountain" loading="lazy" decoding="async"></div>
+        <span class="blog-cat" data-i18n="blog1_cat">Discipline</span>
+        <h3 data-i18n="blog1_h">Why motivation is the wrong thing to wait for</h3>
+        <p data-i18n="blog1_p">On building a practice that survives the weeks you don't feel inspired at all.</p>
+        <span class="blog-read" data-i18n="blog1_read">6 min read →</span>
+      </div>
+      <div class="blog-card">
+        <div class="blog-thumb"><img src="https://images.pexels.com/photos/1058956/pexels-photo-1058956.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Person doing yoga on a rocky mountain" loading="lazy" decoding="async"></div>
+        <span class="blog-cat" data-i18n="blog2_cat">Psychology</span>
+        <h3 data-i18n="blog2_h">What your tightest muscle is actually telling you</h3>
+        <p data-i18n="blog2_p">A practical, unmystical look at the body-mind connection — no auras involved.</p>
+        <span class="blog-read" data-i18n="blog2_read">8 min read →</span>
+      </div>
+      <div class="blog-card">
+        <div class="blog-thumb"><img src="https://images.pexels.com/photos/4099811/pexels-photo-4099811.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Sunrise over a quiet mountain landscape" loading="lazy" decoding="async"></div>
+        <span class="blog-cat" data-i18n="blog3_cat">Self-improvement</span>
+        <h3 data-i18n="blog3_h">Adult dreams need adult schedules</h3>
+        <p data-i18n="blog3_p">On why ambition without a calendar is just a nice idea you'll forget by March.</p>
+        <span class="blog-read" data-i18n="blog3_read">5 min read →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="breath-dot"></span><span data-i18n="gallery_eyebrow">Gallery</span></div>
+      <h2 data-i18n="gallery_h2">Moments from the mat, the mountains, and in between.</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="g-tile g1"><img src="https://images.pexels.com/photos/14025089/pexels-photo-14025089.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Woman meditating on a rock overlooking green mountains at dawn" loading="lazy" decoding="async"><span data-i18n="g1">Morning practice</span></div>
+      <div class="g-tile g2"><img src="https://images.pexels.com/photos/6752163/pexels-photo-6752163.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Yoga mat and cork blocks on a wooden floor in natural light" loading="lazy" decoding="async"><span data-i18n="g2">Studio, early light</span></div>
+      <div class="g-tile g3"><img src="https://images.pexels.com/photos/19987955/pexels-photo-19987955.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Sunlit forest path" loading="lazy" decoding="async"><span data-i18n="g3">Forest walk</span></div>
+      <div class="g-tile g4"><img src="https://images.pexels.com/photos/9032698/pexels-photo-9032698.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Person meditating beside a lit candle" loading="lazy" decoding="async"><span data-i18n="g4">Breath work</span></div>
+      <div class="g-tile g5"><img src="https://images.pexels.com/photos/4171730/pexels-photo-4171730.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Woman practising yoga in the mountains at sunset" loading="lazy" decoding="async"><span data-i18n="g5">Sunday retreat</span></div>
+      <div class="g-tile g6"><img src="https://images.pexels.com/photos/13849284/pexels-photo-13849284.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Woman practising yoga on the beach at sunset" loading="lazy" decoding="async"><span data-i18n="g6">Coastal stillness</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow"><span class="breath-dot"></span><span data-i18n="faq_eyebrow">Common Questions</span></div>
+      <h2 data-i18n="faq_h2">Before you book, a few honest answers.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" id="faq1-q" aria-expanded="false" aria-controls="faq1-a">
+          <span data-i18n="faq1_q">I've never done yoga. Is that a problem?</span><span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer" id="faq1-a" role="region" aria-labelledby="faq1-q">
+          <p data-i18n="faq1_a">Not at all — most of my students started with zero experience. Hatha Yoga is the easiest entry point, and I'll always give you a simpler version of any pose.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" id="faq2-q" aria-expanded="false" aria-controls="faq2-a">
+          <span data-i18n="faq2_q">What should I bring to my first class?</span><span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer" id="faq2-a" role="region" aria-labelledby="faq2-q">
+          <p data-i18n="faq2_a">Just comfortable clothing and water. Mats, blocks, and straps are provided — no need to buy anything before your first visit.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" id="faq3-q" aria-expanded="false" aria-controls="faq3-a">
+          <span data-i18n="faq3_q">Can I practise if I have an injury?</span><span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer" id="faq3-a" role="region" aria-labelledby="faq3-q">
+          <p data-i18n="faq3_a">Often yes, with modifications. Tell me about it before class or book a private session so I can build around it safely.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" id="faq4-q" aria-expanded="false" aria-controls="faq4-a">
+          <span data-i18n="faq4_q">What's your cancellation policy?</span><span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer" id="faq4-a" role="region" aria-labelledby="faq4-q">
+          <p data-i18n="faq4_a">Cancel up to 6 hours before a group class with no charge. Private sessions need 24 hours' notice.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" id="faq5-q" aria-expanded="false" aria-controls="faq5-a">
+          <span data-i18n="faq5_q">Do you offer online classes?</span><span class="faq-icon" aria-hidden="true"></span>
+        </button>
+        <div class="faq-answer" id="faq5-a" role="region" aria-labelledby="faq5-q">
+          <p data-i18n="faq5_a">Private sessions can be held online. Group classes are studio-only for now — the small-room attention is part of the point.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<!-- ================= NEWSLETTER ================= -->
+<section id="newsletter-section">
+  <div class="wrap">
+    <div class="newsletter">
+      <div class="newsletter-copy">
+        <h3 data-i18n="newsletter_h">A short note, once a month.</h3>
+        <p data-i18n="newsletter_p">Practice notes, schedule changes, and the occasional honest thought on discipline. No selling, no spam.</p>
+      </div>
+      <div>
+        <form class="newsletter-form" id="newsletterForm" novalidate>
+          <label for="newsletterEmail" class="sr-only" data-i18n="newsletter_label">Email address</label>
+          <input type="email" id="newsletterEmail" data-i18n-placeholder="newsletter_placeholder" placeholder="you@example.com" required aria-describedby="newsletterError">
+          <button type="submit" class="btn-primary" data-i18n="newsletter_btn">Subscribe</button>
+        </form>
+        <p class="field-error" id="newsletterError" aria-live="polite"></p>
+        <p class="newsletter-success" id="newsletterSuccess" data-i18n="newsletter_success">Thank you — check your inbox to confirm.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="eyebrow"><span class="breath-dot"></span><span data-i18n="contact_eyebrow">Get in touch</span></div>
+      <h2 style="margin-bottom:28px;" data-i18n="contact_h2">Tell me a bit about where you're starting from.</h2>
+      <form id="contactForm" novalidate>
+        <div class="field">
+          <label for="name" data-i18n="label_name">Name</label>
+          <input type="text" id="name" data-i18n-placeholder="placeholder_name" placeholder="Your name" required aria-describedby="name-error">
+          <span class="field-error" id="name-error" aria-live="polite"></span>
+        </div>
+        <div class="field">
+          <label for="email" data-i18n="label_email">Email</label>
+          <input type="email" id="email" placeholder="you@example.com" required aria-describedby="email-error">
+          <span class="field-error" id="email-error" aria-live="polite"></span>
+        </div>
+        <div class="field">
+          <label for="interest" data-i18n="label_interest">Class you're interested in</label>
+          <select id="interest">
+            <option data-i18n="opt1">Hatha Yoga</option>
+            <option data-i18n="opt2">Vinyasa Flow</option>
+            <option data-i18n="opt3">Yin & Deep Stretch</option>
+            <option data-i18n="opt4">Pranayama Practice</option>
+            <option data-i18n="opt5">Mama Flow</option>
+            <option data-i18n="opt6">Private Sessions</option>
+            <option data-i18n="opt7">Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message" data-i18n="label_message">Message</label>
+          <textarea id="message" data-i18n-placeholder="placeholder_message" placeholder="What brings you to the practice right now?"></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="border:none; cursor:pointer;" data-i18n="btn_send">Send message</button>
+        <p class="form-success" data-i18n="form_note">Thank you — I read every message myself and will reply within a couple of days.</p>
+      </form>
+    </div>
+    <div class="contact-info">
+      <h3 data-i18n="contact_info_h">Studio details</h3>
+      <div class="info-row"><div class="lab" data-i18n="info_where_lab">Where</div><div class="val" data-i18n="info_where_val">Studio Vдох, central district — small group room, light wood floors</div></div>
+      <div class="info-row"><div class="lab" data-i18n="info_hours_lab">Hours</div><div class="val" data-i18n="info_hours_val">Tue – Sat, 7:00–20:00. Sundays for retreats only.</div></div>
+      <div class="info-row"><div class="lab" data-i18n="info_email_lab">Email</div><div class="val">hello@annayoga.studio</div></div>
+      <div class="info-row"><div class="lab" data-i18n="info_reply_lab">Reply</div><div class="val" data-i18n="info_reply_val">Usually within 48 hours — I don't outsource this part.</div></div>
+      <div class="social-row">
+        <a href="#" class="social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="#" class="social-btn" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></a>
+        <a href="#" class="social-btn" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l6 3-6 3V9z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-logo">Anna</div>
+      <div class="footer-nav">
+        <a href="#about" data-i18n="nav_about">About</a>
+        <a href="#philosophy" data-i18n="nav_philosophy">Philosophy</a>
+        <a href="#classes" data-i18n="nav_classes">Classes</a>
+        <a href="#schedule" data-i18n="nav_schedule">Schedule</a>
+        <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
+        <a href="#journey" data-i18n="nav_journey">Journey</a>
+        <a href="#blog" data-i18n="nav_blog">Journal</a>
+        <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+        <a href="#contact" data-i18n="nav_cta">Get in touch</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer_copyright">© 2026 Anna. Small studio, steady practice.</span>
+      <span style="display:flex; align-items:center; gap:8px;"><span class="breath-dot" style="background:var(--sage-soft);"></span> <span data-i18n="footer_built">Built slowly, on purpose.</span></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= BACK TO TOP ================= -->
+<button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+
+<!-- ================= CONTROL PANEL ================= -->
+<div class="control-panel" role="group" aria-label="Site preferences: language, dark mode, and color theme">
+  <div class="cp-lang">
+    <button class="cp-lang-btn active" data-lang="en" onclick="setLanguage('en')" aria-pressed="true">EN</button>
+    <button class="cp-lang-btn" data-lang="ru" onclick="setLanguage('ru')" aria-pressed="false">RU</button>
+  </div>
+  <button class="cp-mode-btn" onclick="toggleMode()" title="Toggle dark mode" aria-label="Toggle dark mode">
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+  </button>
+  <div class="cp-themes">
+    <button class="cp-swatch active" data-theme="green" style="background:#2E9E4C" onclick="setTheme('green')" title="Green" aria-label="Green theme"></button>
+    <button class="cp-swatch" data-theme="cyan" style="background:#12B3A0" onclick="setTheme('cyan')" title="Cyan" aria-label="Cyan theme"></button>
+    <button class="cp-swatch" data-theme="redpink" style="background:#D6336C" onclick="setTheme('redpink')" title="Rose" aria-label="Rose theme"></button>
+    <button class="cp-swatch" data-theme="yellow" style="background:#E8862E" onclick="setTheme('yellow')" title="Amber" aria-label="Amber theme"></button>
+  </div>
+</div>
+
+<script>
+  /* ===================== TRANSLATIONS ===================== */
+  var translations = {
+    en: {
+      nav_about:"About", nav_philosophy:"Philosophy", nav_classes:"Classes", nav_journey:"Journey", nav_blog:"Journal", nav_gallery:"Gallery", nav_cta:"Get in touch",
+      hero_eyebrow:"Traditional yoga · Rooted practice",
+      hero_h1:"Yoga isn't a performance.<br>It's a return — <em>breath by breath.</em>",
+      hero_lede:"I'm Anna. I've spent most of my adult life on the mat, and the rest of it learning that discipline is kinder than motivation. I teach the practice that actually holds up over years, not the one built for a highlight reel.",
+      hero_btn_primary:"Book a class", hero_btn_secondary:"Read her story",
+      hero_photo_alt:"Woman practising yoga on a mountain peak at sunrise",
+      about_eyebrow:"About Anna", about_h2:"Practical, patient, and not remotely interested in impressing you.",
+      about_p1:"I started practicing yoga in my early twenties, mostly to fix a bad back and a worse temper. It became something else entirely — a way of paying attention. These days I teach in a small studio, and I still practice every morning before anyone else in the house is awake.",
+      about_p2:"I'm married, I have one child, and my life looks a lot like yours: full of deadlines, dishes, and difficult conversations. I don't teach yoga as an escape from that. I teach it as a way to stay steady inside it. 😄",
+      about_p3:"I won't tell you your chakras are blocked. I will tell you, gently, if your ego is doing the pose instead of your body — and how to fix that.",
+      fact1_num:"11+", fact1_lab:"years teaching", fact2_num:"500+", fact2_lab:"students guided", fact3_num:"3", fact3_lab:"teacher trainings", fact4_num:"1", fact4_lab:"very patient family",
+      philosophy_eyebrow:"Her Philosophy", philosophy_h2:"Traditional yoga, not trend yoga.",
+      philosophy_p:"No playlists engineered to make you cry. No \"30-day transformation.\" Just the practice, done properly, for as long as it takes.",
+      philosophy_quote:"\"Adult dreams need adult discipline. Nobody's flexibility improved because they wanted it badly enough — it improved because they showed up on the Tuesdays they didn't feel like it.\"",
+      principle1_h:"Discipline over motivation", principle1_p:"Motivation is weather. Discipline is climate. I build practices people can actually keep for years, not weeks.",
+      principle2_h:"Awareness before achievement", principle2_p:"A pose that hurts your knee isn't advanced — it's just wrong for you today. We train attention first, shapes second.",
+      principle3_h:"Time is part of the method", principle3_p:"Real change is slow and mostly invisible while it's happening. I'd rather tell you that now than let a studio's marketing tell you otherwise.",
+      classes_eyebrow:"Classes", classes_h2:"Find the practice that fits your actual life.",
+      classes_p:"Small groups, real attention, and classes built around how bodies age and change — not a one-size-fits-all sequence.",
+      class1_tag:"Foundational", class1_h:"Hatha Yoga", class1_p:"Slow, precise, and unglamorous in the best way. We hold postures long enough to actually learn something from them.",
+      class2_tag:"Dynamic", class2_h:"Vinyasa Flow", class2_p:"Breath-linked movement for people who want to build strength and stamina without turning the mat into a gym.",
+      class3_tag:"Restorative", class3_h:"Yin & Deep Stretch", class3_p:"Long, supported holds that work into connective tissue and a nervous system that's been running too hot for too long.",
+      class4_tag:"Breathwork", class4_h:"Pranayama Practice", class4_p:"Breathing is the fastest lever we have over the nervous system. This class is quiet, seated, and more useful than it looks.",
+      class5_tag:"Life stage", class5_h:"Mama Flow", class5_p:"For pregnant and postpartum students. I built this class from my own recovery — it's realistic about what a changed body needs.",
+      class6_tag:"1:1", class6_h:"Private Sessions", class6_p:"For injuries, specific goals, or people who'd rather work through things without an audience. Fully tailored.",
+      benefits_eyebrow:"Why it works", benefits_h2:"What changes when you actually stay consistent.",
+      benefits_p1:"None of this happens after one class. It happens after the fortieth one, when you stop noticing the practice and start noticing your life.",
+      benefits_p2:"I've watched this pattern hold for over a decade of teaching — it's not mystical, it's just what regular, well-taught movement and breath do to a person over time.",
+      benefit1_h:"Physical resilience", benefit1_p:"Stronger joints, better posture, fewer of the small injuries that come from a stiff, unaware body.",
+      benefit2_h:"Genuine stress relief", benefit2_p:"Not a temporary escape — a nervous system that recovers faster after the hard days.",
+      benefit3_h:"Mental clarity", benefit3_p:"Fewer reactive decisions. More space between what happens and how you respond to it.",
+      benefit4_h:"Inner balance", benefit4_p:"A steadier relationship with the parts of life you can't control — which, honestly, is most of it.",
+      benefit5_h:"Real community", benefit5_p:"Small classes mean you're recognized, not just counted — that matters more than people expect.",
+      journey_eyebrow:"Her Journey", journey_h2:"A practice built over years, not a weekend certification.", journey_p:"The honest version — including the parts that weren't graceful.",
+      tl1_year:"2011", tl1_h:"First class, wrong reasons", tl1_p:"Started practicing to fix a bad back. Stayed because it was the only hour of the week my mind actually went quiet.",
+      tl2_year:"2014", tl2_h:"200-hour teacher training", tl2_p:"Realized halfway through that I was more interested in why people quit their practice than in how to do a deeper backbend.",
+      tl3_year:"2016", tl3_h:"First students of my own", tl3_p:"Small living-room classes. No branding, no schedule app — just people who kept coming back.",
+      tl4_year:"2020", tl4_h:"Became a mother", tl4_p:"Learned more about patience and discipline in that first year than in a decade of asana practice. Built the Mama Flow class out of that recovery.",
+      tl5_year:"Now", tl5_h:"Teaching, still learning", tl5_p:"Running a small studio, still practicing every morning, still occasionally arguing with my husband about whose turn it is to do the dishes. 🤷🏽‍♀️",
+      testimonials_eyebrow:"Testimonials", testimonials_h2:"What students actually say — no highlight reel required.",
+      t1_quote:"Anna doesn't do the \"you're perfect exactly as you are\" thing. She tells you what's actually happening in the pose. It's more useful than it sounds.", t1_name:"Ekaterina", t1_role:"Vinyasa Flow, 2 years",
+      t2_quote:"I came for a bad shoulder and stayed for the Tuesday pranayama sessions. My whole week is calmer since I started.", t2_name:"Dmitri", t2_role:"Pranayama Practice, 8 months",
+      t3_quote:"Mama Flow got me back into my body after my daughter was born without any of the \"bounce back\" pressure. Anna's been through it herself, and it shows.", t3_name:"Olga", t3_role:"Mama Flow, 1 year",
+      blog_eyebrow:"From the Journal", blog_h2:"Writing on practice, psychology, and staying human.",
+      blog1_cat:"Discipline", blog1_h:"Why motivation is the wrong thing to wait for", blog1_p:"On building a practice that survives the weeks you don't feel inspired at all.", blog1_read:"6 min read →",
+      blog2_cat:"Psychology", blog2_h:"What your tightest muscle is actually telling you", blog2_p:"A practical, unmystical look at the body-mind connection — no auras involved.", blog2_read:"8 min read →",
+      blog3_cat:"Self-improvement", blog3_h:"Adult dreams need adult schedules", blog3_p:"On why ambition without a calendar is just a nice idea you'll forget by March.", blog3_read:"5 min read →",
+      gallery_eyebrow:"Gallery", gallery_h2:"Moments from the mat, the mountains, and in between.",
+      g1:"Morning practice", g2:"Studio, early light", g3:"Forest walk", g4:"Breath work", g5:"Sunday retreat", g6:"Coastal stillness",
+      contact_eyebrow:"Get in touch", contact_h2:"Tell me a bit about where you're starting from.",
+      label_name:"Name", placeholder_name:"Your name", label_email:"Email", label_interest:"Class you're interested in",
+      opt1:"Hatha Yoga", opt2:"Vinyasa Flow", opt3:"Yin & Deep Stretch", opt4:"Pranayama Practice", opt5:"Mama Flow", opt6:"Private Sessions", opt7:"Not sure yet",
+      label_message:"Message", placeholder_message:"What brings you to the practice right now?", btn_send:"Send message",
+      form_note:"Thank you — I read every message myself and will reply within a couple of days.",
+      contact_info_h:"Studio details", info_where_lab:"Where", info_where_val:"Studio Vдох, central district — small group room, light wood floors",
+      info_hours_lab:"Hours", info_hours_val:"Tue – Sat, 7:00–20:00. Sundays for retreats only.",
+      info_email_lab:"Email", info_reply_lab:"Reply", info_reply_val:"Usually within 48 hours — I don't outsource this part.",
+      footer_copyright:"© 2026 Anna. Small studio, steady practice.", footer_built:"Built slowly, on purpose.",
+      skip_link:"Skip to content", nav_schedule:"Schedule", nav_pricing:"Pricing", nav_faq:"FAQ",
+      schedule_eyebrow:"Weekly Schedule", schedule_h2:"When to find us on the mat.",
+      schedule_p:"Small groups, fixed times, no drop-in chaos. Private sessions are booked separately by request.",
+      schedule_caption:"All times local · studio doors open 10 minutes early",
+      schedule_col_day:"Day", schedule_col_morning:"Morning", schedule_col_evening:"Evening",
+      schedule_tue:"Tuesday", schedule_tue_am:"7:00 — Hatha Yoga", schedule_tue_pm:"18:30 — Vinyasa Flow",
+      schedule_wed:"Wednesday", schedule_wed_am:"7:00 — Pranayama Practice", schedule_wed_pm:"18:30 — Yin & Deep Stretch",
+      schedule_thu:"Thursday", schedule_thu_am:"7:00 — Hatha Yoga", schedule_thu_pm:"18:30 — Mama Flow",
+      schedule_fri:"Friday", schedule_fri_am:"7:00 — Vinyasa Flow", schedule_fri_pm:"18:30 — Yin & Deep Stretch",
+      schedule_sat:"Saturday", schedule_sat_am:"9:00 — Hatha Yoga", schedule_sat_pm:"By request — Private Sessions",
+      schedule_sun:"Sunday", schedule_sun_note:"Retreats only — see Journal for upcoming dates",
+      pricing_eyebrow:"Pricing", pricing_h2:"Simple pricing, no hidden tiers.", pricing_p:"Pick what fits how often you'll actually come — you can always change later.",
+      price1_h:"Drop-in", price1_amount:"$22", price1_unit:" / class", price1_desc:"For visitors and the occasionally spontaneous.",
+      price1_f1:"Any single group class", price1_f2:"Mat and props included", price1_f3:"No commitment", price1_cta:"Book a class",
+      price2_badge:"Most popular", price2_h:"Monthly Unlimited", price2_amount:"$95", price2_unit:" / month", price2_desc:"For students building an actual practice.",
+      price2_f1:"Unlimited group classes", price2_f2:"Priority booking", price2_f3:"10% off private sessions", price2_cta:"Start this month",
+      price3_h:"Private Sessions", price3_amount:"$70", price3_unit:" / session", price3_desc:"For injuries, specific goals, or 1:1 attention.",
+      price3_f1:"Fully tailored plan", price3_f2:"Flexible scheduling", price3_f3:"In studio or online", price3_cta:"Request a session",
+      faq_eyebrow:"Common Questions", faq_h2:"Before you book, a few honest answers.",
+      faq1_q:"I've never done yoga. Is that a problem?", faq1_a:"Not at all — most of my students started with zero experience. Hatha Yoga is the easiest entry point, and I'll always give you a simpler version of any pose.",
+      faq2_q:"What should I bring to my first class?", faq2_a:"Just comfortable clothing and water. Mats, blocks, and straps are provided — no need to buy anything before your first visit.",
+      faq3_q:"Can I practise if I have an injury?", faq3_a:"Often yes, with modifications. Tell me about it before class or book a private session so I can build around it safely.",
+      faq4_q:"What's your cancellation policy?", faq4_a:"Cancel up to 6 hours before a group class with no charge. Private sessions need 24 hours' notice.",
+      faq5_q:"Do you offer online classes?", faq5_a:"Private sessions can be held online. Group classes are studio-only for now — the small-room attention is part of the point.",
+      newsletter_h:"A short note, once a month.", newsletter_p:"Practice notes, schedule changes, and the occasional honest thought on discipline. No selling, no spam.",
+      newsletter_label:"Email address", newsletter_placeholder:"you@example.com", newsletter_btn:"Subscribe", newsletter_success:"Thank you — check your inbox to confirm."
+    },
+    ru: {
+      nav_about:"Обо мне", nav_philosophy:"Философия", nav_classes:"Занятия", nav_journey:"Путь", nav_blog:"Блог", nav_gallery:"Галерея", nav_cta:"Связаться",
+      hero_eyebrow:"Традиционная йога · Практика с корнями",
+      hero_h1:"Йога — это не представление.<br>Это возвращение — <em>вдох за вдохом.</em>",
+      hero_lede:"Меня зовут Анна. Большую часть взрослой жизни я провела на коврике, а остальное время училась тому, что дисциплина добрее, чем мотивация. Я преподаю практику, которая выдерживает годы, а не ту, что создана для красивого ролика.",
+      hero_btn_primary:"Записаться на занятие", hero_btn_secondary:"Узнать её историю",
+      hero_photo_alt:"Женщина занимается йогой на вершине горы на рассвете",
+      about_eyebrow:"Об Анне", about_h2:"Практичная, терпеливая и совсем не стремится вас впечатлить.",
+      about_p1:"Я начала заниматься йогой в начале двадцатых — в основном, чтобы разобраться с больной спиной и ещё более скверным характером. Но это переросло в нечто большее — в умение быть внимательной. Сейчас я преподаю в небольшой студии и до сих пор практикую каждое утро, пока весь дом ещё спит.",
+      about_p2:"Я замужем, у меня один ребёнок, и моя жизнь очень похожа на вашу: дедлайны, посуда и непростые разговоры. Я не преподаю йогу как побег от всего этого. Я преподаю её как способ оставаться устойчивой внутри этого. 😄",
+      about_p3:"Я не буду говорить вам, что у вас заблокированы чакры. Но мягко скажу, если в позе работает ваше эго, а не тело — и как это исправить.",
+      fact1_num:"11+", fact1_lab:"лет преподавания", fact2_num:"500+", fact2_lab:"учеников", fact3_num:"3", fact3_lab:"курса подготовки", fact4_num:"1", fact4_lab:"очень терпеливая семья",
+      philosophy_eyebrow:"Её философия", philosophy_h2:"Традиционная йога, а не йога-тренд.",
+      philosophy_p:"Никаких плейлистов, вызывающих слёзы. Никакой «трансформации за 30 дней». Просто практика, выполненная правильно, столько времени, сколько нужно.",
+      philosophy_quote:"«Взрослым мечтам нужна взрослая дисциплина. Ничья гибкость не улучшилась от того, что этого сильно хотелось — она улучшилась потому, что человек приходил и по вторникам, когда совсем не хотелось.»",
+      principle1_h:"Дисциплина важнее мотивации", principle1_p:"Мотивация — это погода. Дисциплина — это климат. Я выстраиваю практику, которую люди действительно могут поддерживать годами, а не неделями.",
+      principle2_h:"Осознанность прежде достижений", principle2_p:"Поза, которая причиняет боль колену, не «продвинутая» — она просто не подходит вам сегодня. Мы тренируем внимание прежде формы.",
+      principle3_h:"Время — часть метода", principle3_p:"Настоящие перемены происходят медленно и почти незаметно. Я лучше скажу вам это сразу, чем позволю маркетингу студии говорить обратное.",
+      classes_eyebrow:"Занятия", classes_h2:"Найдите практику, которая подходит именно вашей жизни.",
+      classes_p:"Небольшие группы, настоящее внимание и занятия, построенные с учётом того, как тело меняется с возрастом — а не один сценарий для всех.",
+      class1_tag:"Базовый", class1_h:"Хатха-йога", class1_p:"Медленно, точно и по-хорошему без прикрас. Мы удерживаем позы достаточно долго, чтобы действительно что-то из них извлечь.",
+      class2_tag:"Динамика", class2_h:"Виньяса-флоу", class2_p:"Движение, связанное с дыханием, для тех, кто хочет силы и выносливости, но без превращения коврика в спортзал.",
+      class3_tag:"Восстановление", class3_h:"Инь-йога и глубокая растяжка", class3_p:"Долгие поддерживаемые позы, которые работают с соединительной тканью и нервной системой, которая слишком долго была перегружена.",
+      class4_tag:"Дыхание", class4_h:"Практика пранаямы", class4_p:"Дыхание — самый быстрый рычаг воздействия на нервную систему. Это тихое занятие сидя, и оно полезнее, чем кажется.",
+      class5_tag:"Жизненный этап", class5_h:"Мама-флоу", class5_p:"Для беременных и после родов. Я построила это занятие на основе собственного восстановления — оно реалистично смотрит на то, что нужно изменившемуся телу.",
+      class6_tag:"Индивидуально", class6_h:"Персональные занятия", class6_p:"Для травм, конкретных целей или тех, кто предпочитает работать без зрителей. Полностью под вас.",
+      benefits_eyebrow:"Почему это работает", benefits_h2:"Что меняется, когда вы действительно занимаетесь регулярно.",
+      benefits_p1:"Ничего из этого не происходит после одного занятия. Это происходит после сорокового, когда вы перестаёте замечать практику и начинаете замечать свою жизнь.",
+      benefits_p2:"Я наблюдаю эту закономерность больше десяти лет преподавания — в этом нет ничего мистического, это просто то, что регулярное, грамотно выстроенное движение и дыхание делают с человеком со временем.",
+      benefit1_h:"Физическая устойчивость", benefit1_p:"Более крепкие суставы, лучшая осанка, меньше мелких травм от скованного, невнимательного тела.",
+      benefit2_h:"Настоящее снятие стресса", benefit2_p:"Не временный побег — а нервная система, которая быстрее восстанавливается после тяжёлых дней.",
+      benefit3_h:"Ясность ума", benefit3_p:"Меньше импульсивных решений. Больше пространства между тем, что происходит, и тем, как вы на это реагируете.",
+      benefit4_h:"Внутренний баланс", benefit4_p:"Более устойчивые отношения с тем, что вы не можете контролировать — а это, честно говоря, почти всё.",
+      benefit5_h:"Настоящее сообщество", benefit5_p:"Небольшие группы означают, что вас узнают, а не просто считают — это важнее, чем кажется.",
+      journey_eyebrow:"Её путь", journey_h2:"Практика, выстроенная годами, а не сертификатом за выходные.", journey_p:"Честная версия — включая моменты, которые не были изящными.",
+      tl1_year:"2011", tl1_h:"Первое занятие по неправильным причинам", tl1_p:"Начала заниматься, чтобы разобраться с больной спиной. Осталась, потому что это был единственный час в неделю, когда мой ум по-настоящему затихал.",
+      tl2_year:"2014", tl2_h:"200-часовой курс подготовки преподавателей", tl2_p:"На середине курса поняла, что меня больше интересует, почему люди бросают практику, чем то, как сделать более глубокий прогиб назад.",
+      tl3_year:"2016", tl3_h:"Первые собственные ученики", tl3_p:"Небольшие занятия в гостиной. Без брендинга, без приложений для записи — просто люди, которые продолжали приходить.",
+      tl4_year:"2020", tl4_h:"Стала мамой", tl4_p:"За первый год узнала о терпении и дисциплине больше, чем за десятилетие практики асан. Из этого восстановления родилось занятие «Мама-флоу».",
+      tl5_year:"Сейчас", tl5_h:"Преподаю, всё ещё учусь", tl5_p:"Веду небольшую студию, всё ещё практикую каждое утро и всё ещё иногда спорю с мужем, чья очередь мыть посуду. 🤷🏽‍♀️",
+      testimonials_eyebrow:"Отзывы", testimonials_h2:"Что ученики говорят на самом деле — без прикрас.",
+      t1_quote:"У Анны нет истории про «ты и так совершенна». Она говорит, что на самом деле происходит в позе. Это полезнее, чем звучит.", t1_name:"Екатерина", t1_role:"Виньяса-флоу, 2 года",
+      t2_quote:"Пришёл из-за больного плеча, остался ради вторничных занятий пранаямой. С тех пор вся неделя стала спокойнее.", t2_name:"Дмитрий", t2_role:"Практика пранаямы, 8 месяцев",
+      t3_quote:"Мама-флоу помогло мне вернуться в своё тело после рождения дочери без давления «быстро прийти в форму». Анна сама через это прошла, и это чувствуется.", t3_name:"Ольга", t3_role:"Мама-флоу, 1 год",
+      blog_eyebrow:"Из блога", blog_h2:"Тексты о практике, психологии и умении оставаться собой.",
+      blog1_cat:"Дисциплина", blog1_h:"Почему не стоит ждать мотивации", blog1_p:"О том, как выстроить практику, которая переживёт недели, когда вдохновения совсем нет.", blog1_read:"6 мин чтения →",
+      blog2_cat:"Психология", blog2_h:"О чём на самом деле говорит ваша самая зажатая мышца", blog2_p:"Практичный, без мистики взгляд на связь тела и ума — никаких аур.", blog2_read:"8 мин чтения →",
+      blog3_cat:"Саморазвитие", blog3_h:"Взрослым мечтам нужно взрослое расписание", blog3_p:"О том, почему амбиции без календаря — это просто красивая идея, которую вы забудете к марту.", blog3_read:"5 мин чтения →",
+      gallery_eyebrow:"Галерея", gallery_h2:"Моменты с коврика, из гор и между ними.",
+      g1:"Утренняя практика", g2:"Студия, раннее утро", g3:"Прогулка в лесу", g4:"Дыхательная практика", g5:"Воскресный ретрит", g6:"Тишина побережья",
+      contact_eyebrow:"Связаться", contact_h2:"Расскажите немного о том, с чего вы начинаете.",
+      label_name:"Имя", placeholder_name:"Ваше имя", label_email:"Email", label_interest:"Занятие, которое вас интересует",
+      opt1:"Хатха-йога", opt2:"Виньяса-флоу", opt3:"Инь-йога и растяжка", opt4:"Практика пранаямы", opt5:"Мама-флоу", opt6:"Персональные занятия", opt7:"Пока не уверен(а)",
+      label_message:"Сообщение", placeholder_message:"Что привело вас к практике прямо сейчас?", btn_send:"Отправить сообщение",
+      form_note:"Спасибо — я читаю каждое сообщение лично и отвечу в течение пары дней.",
+      contact_info_h:"Детали студии", info_where_lab:"Где", info_where_val:"Студия «Вдох», центральный район — небольшой зал, светлый деревянный пол",
+      info_hours_lab:"Часы", info_hours_val:"Вт–Сб, 7:00–20:00. Воскресенье — только ретриты.",
+      info_email_lab:"Email", info_reply_lab:"Ответ", info_reply_val:"Обычно в течение 48 часов — я не передаю это на аутсорс.",
+      footer_copyright:"© 2026 Анна. Небольшая студия, устойчивая практика.", footer_built:"Создано неспешно и осознанно.",
+      skip_link:"Перейти к содержимому", nav_schedule:"Расписание", nav_pricing:"Цены", nav_faq:"Вопросы",
+      schedule_eyebrow:"Расписание занятий", schedule_h2:"Когда нас можно найти на коврике.",
+      schedule_p:"Небольшие группы, фиксированное время, никакого хаоса с одиночными визитами. Персональные занятия бронируются отдельно по запросу.",
+      schedule_caption:"Всё время указано местное · студия открывается на 10 минут раньше",
+      schedule_col_day:"День", schedule_col_morning:"Утро", schedule_col_evening:"Вечер",
+      schedule_tue:"Вторник", schedule_tue_am:"7:00 — Хатха-йога", schedule_tue_pm:"18:30 — Виньяса-флоу",
+      schedule_wed:"Среда", schedule_wed_am:"7:00 — Практика пранаямы", schedule_wed_pm:"18:30 — Инь-йога и растяжка",
+      schedule_thu:"Четверг", schedule_thu_am:"7:00 — Хатха-йога", schedule_thu_pm:"18:30 — Мама-флоу",
+      schedule_fri:"Пятница", schedule_fri_am:"7:00 — Виньяса-флоу", schedule_fri_pm:"18:30 — Инь-йога и растяжка",
+      schedule_sat:"Субботa", schedule_sat_am:"9:00 — Хатха-йога", schedule_sat_pm:"По запросу — персональные занятия",
+      schedule_sun:"Воскресенье", schedule_sun_note:"Только ретриты — даты смотрите в блоге",
+      pricing_eyebrow:"Цены", pricing_h2:"Простые цены, без скрытых уровней.", pricing_p:"Выберите то, что подходит частоте ваших визитов — позже всегда можно изменить.",
+      price1_h:"Разовое посещение", price1_amount:"$22", price1_unit:" / занятие", price1_desc:"Для гостей и тех, кто приходит спонтанно.",
+      price1_f1:"Любое групповое занятие", price1_f2:"Коврик и инвентарь включены", price1_f3:"Без обязательств", price1_cta:"Записаться",
+      price2_badge:"Популярный выбор", price2_h:"Безлимит на месяц", price2_amount:"$95", price2_unit:" / месяц", price2_desc:"Для тех, кто выстраивает настоящую практику.",
+      price2_f1:"Неограниченные групповые занятия", price2_f2:"Приоритетная запись", price2_f3:"Скидка 10% на персональные занятия", price2_cta:"Начать в этом месяце",
+      price3_h:"Персональные занятия", price3_amount:"$70", price3_unit:" / занятие", price3_desc:"Для травм, конкретных целей или индивидуального внимания.",
+      price3_f1:"Полностью под вас", price3_f2:"Гибкое расписание", price3_f3:"В студии или онлайн", price3_cta:"Оставить запрос",
+      faq_eyebrow:"Частые вопросы", faq_h2:"Прежде чем записаться — несколько честных ответов.",
+      faq1_q:"Я никогда не занималась йогой. Это проблема?", faq1_a:"Совсем нет — большинство моих учеников начинали с нуля. Хатха-йога — самая простая точка входа, и я всегда покажу более простой вариант любой позы.",
+      faq2_q:"Что взять на первое занятие?", faq2_a:"Только удобную одежду и воду. Коврики, блоки и ремни предоставляются — покупать что-то заранее не нужно.",
+      faq3_q:"Можно ли заниматься при травме?", faq3_a:"Часто да, с изменениями. Расскажите об этом перед занятием или запишитесь на персональное занятие, чтобы я могла построить его безопасно.",
+      faq4_q:"Какая у вас политика отмены?", faq4_a:"Отмена группового занятия без штрафа возможна за 6 часов. Для персональных занятий нужно предупредить за 24 часа.",
+      faq5_q:"Есть ли онлайн-занятия?", faq5_a:"Персональные занятия можно проводить онлайн. Групповые занятия пока только в студии — внимание в небольшой группе — часть смысла.",
+      newsletter_h:"Короткое письмо раз в месяц.", newsletter_p:"Заметки о практике, изменения в расписании и честные мысли о дисциплине. Без продаж и спама.",
+      newsletter_label:"Адрес электронной почты", newsletter_placeholder:"you@example.com", newsletter_btn:"Подписаться", newsletter_success:"Спасибо — проверьте почту для подтверждения."
+    }
+  };
+
+  function applyLanguage(lang){
+    var dict = translations[lang] || translations.en;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      if(dict[key] !== undefined){ el.innerHTML = dict[key]; }
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
+      var key = el.getAttribute('data-i18n-placeholder');
+      if(dict[key] !== undefined){ el.setAttribute('placeholder', dict[key]); }
+    });
+    document.querySelectorAll('[data-i18n-alt]').forEach(function(el){
+      var key = el.getAttribute('data-i18n-alt');
+      if(dict[key] !== undefined){ el.setAttribute('alt', dict[key]); }
+    });
+    document.documentElement.setAttribute('lang', lang);
+  }
+
+  function setLanguage(lang){
+    document.querySelectorAll('.cp-lang-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.lang === lang); });
+    applyLanguage(lang);
+  }
+
+  /* ===================== THEME + DARK MODE ===================== */
+  function setTheme(theme){
+    document.documentElement.setAttribute('data-theme', theme);
+    document.querySelectorAll('.cp-swatch').forEach(function(b){ b.classList.toggle('active', b.dataset.theme === theme); });
+    updateBg();
+  }
+  function toggleMode(){
+    var cur = document.documentElement.getAttribute('data-mode') || 'light';
+    document.documentElement.setAttribute('data-mode', cur === 'light' ? 'dark' : 'light');
+    updateBg();
+  }
+
+  /* ===================== SCROLL BACKGROUND MORPH ===================== */
+  var STOPS = {
+    green:   { light:[[241,245,234],[225,234,205],[199,219,171],[176,206,148],[158,193,126]], dark:[[18,28,21],[24,38,25],[32,49,31],[27,42,28],[22,34,23]] },
+    cyan:    { light:[[234,246,243],[214,238,231],[186,224,209],[157,209,188],[135,196,174]], dark:[[15,27,25],[21,37,34],[28,51,46],[24,44,40],[19,35,32]] },
+    redpink: { light:[[251,239,243],[243,222,231],[232,196,213],[219,166,192],[201,130,166]], dark:[[27,18,22],[36,24,32],[51,32,42],[42,27,35],[33,21,28]] },
+    yellow:  { light:[[252,247,232],[247,237,201],[240,223,160],[230,196,110],[217,164,65]],  dark:[[28,22,12],[38,29,16],[53,39,18],[44,33,15],[35,27,13]] }
+  };
+
+  function lerp(a,b,t){ return a + (b-a)*t; }
+  function colorAt(stops, p){
+    var segments = stops.length - 1;
+    var scaled = Math.min(Math.max(p,0),1) * segments;
+    var idx = Math.min(Math.floor(scaled), segments - 1);
+    var localT = scaled - idx;
+    var c1 = stops[idx], c2 = stops[idx+1];
+    return 'rgb(' + Math.round(lerp(c1[0],c2[0],localT)) + ',' + Math.round(lerp(c1[1],c2[1],localT)) + ',' + Math.round(lerp(c1[2],c2[2],localT)) + ')';
+  }
+
+  var ticking = false;
+  function updateBg(){
+    var theme = document.documentElement.getAttribute('data-theme') || 'green';
+    var mode = document.documentElement.getAttribute('data-mode') || 'light';
+    var stops = (STOPS[theme] && STOPS[theme][mode]) ? STOPS[theme][mode] : STOPS.green.light;
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var p = max > 0 ? scrollTop / max : 0;
+    document.body.style.backgroundColor = colorAt(stops, p);
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if(!ticking){ requestAnimationFrame(updateBg); ticking = true; }
+  }, { passive: true });
+
+  /* ===================== MOBILE MENU ===================== */
+  var menuToggle = document.getElementById('menuToggle');
+  var navLinks = document.getElementById('navLinks');
+  if(menuToggle && navLinks){
+    menuToggle.addEventListener('click', function(){
+      var isOpen = navLinks.classList.toggle('mobile-open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+    });
+    navLinks.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        navLinks.classList.remove('mobile-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* ===================== FORM VALIDATION ===================== */
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function setFieldError(field, input, message){
+    field.classList.add('error');
+    if(input){ input.setAttribute('aria-invalid', 'true'); }
+    var errorEl = field.querySelector('.field-error');
+    if(errorEl){ errorEl.textContent = message; }
+  }
+  function clearFieldError(field, input){
+    field.classList.remove('error');
+    if(input){ input.removeAttribute('aria-invalid'); }
+    var errorEl = field.querySelector('.field-error');
+    if(errorEl){ errorEl.textContent = ''; }
+  }
+
+  var contactForm = document.getElementById('contactForm');
+  if(contactForm){
+    contactForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var isValid = true;
+      var firstInvalid = null;
+      var fields = contactForm.querySelectorAll('.field');
+      fields.forEach(function(field){
+        var input = field.querySelector('input, textarea, select');
+        if(input && input.required && !input.value.trim()){
+          setFieldError(field, input, 'This field is required.');
+          isValid = false;
+          firstInvalid = firstInvalid || input;
+        } else if(input && input.type === 'email' && input.value && !emailRegex.test(input.value)){
+          setFieldError(field, input, 'Enter a valid email address.');
+          isValid = false;
+          firstInvalid = firstInvalid || input;
+        } else {
+          clearFieldError(field, input);
+        }
+      });
+      if(!isValid){
+        if(firstInvalid){ firstInvalid.focus(); }
+        return;
+      }
+      var successMsg = contactForm.querySelector('.form-success');
+      if(successMsg){
+        successMsg.classList.add('show');
+        successMsg.setAttribute('role', 'status');
+        contactForm.reset();
+        setTimeout(function(){
+          successMsg.classList.remove('show');
+        }, 5000);
+      }
+    });
+    contactForm.querySelectorAll('input, textarea').forEach(function(input){
+      input.addEventListener('input', function(){
+        clearFieldError(this.closest('.field'), this);
+      });
+    });
+  }
+
+  /* ===================== NEWSLETTER FORM ===================== */
+  var newsletterForm = document.getElementById('newsletterForm');
+  if(newsletterForm){
+    var newsletterInput = document.getElementById('newsletterEmail');
+    var newsletterError = document.getElementById('newsletterError');
+    var newsletterSuccess = document.getElementById('newsletterSuccess');
+    newsletterForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!newsletterInput.value.trim() || !emailRegex.test(newsletterInput.value)){
+        newsletterInput.setAttribute('aria-invalid', 'true');
+        if(newsletterError){ newsletterError.textContent = 'Enter a valid email address.'; }
+        newsletterInput.focus();
+        return;
+      }
+      newsletterInput.removeAttribute('aria-invalid');
+      if(newsletterError){ newsletterError.textContent = ''; }
+      if(newsletterSuccess){
+        newsletterSuccess.classList.add('show');
+        newsletterSuccess.setAttribute('role', 'status');
+      }
+      newsletterForm.reset();
+    });
+    newsletterInput.addEventListener('input', function(){
+      this.removeAttribute('aria-invalid');
+      if(newsletterError){ newsletterError.textContent = ''; }
+    });
+  }
+
+  /* ===================== BACK TO TOP ===================== */
+  var backToTop = document.getElementById('backToTop');
+  if(backToTop){
+    window.addEventListener('scroll', function(){
+      if(window.scrollY > 300){
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    backToTop.addEventListener('click', function(){
+      window.scrollTo({ top:0, behavior:'smooth' });
+    });
+  }
+
+  /* ===================== FAQ ACCORDION ===================== */
+  var faqQuestions = document.querySelectorAll('.faq-question');
+  faqQuestions.forEach(function(question){
+    question.addEventListener('click', function(){
+      var item = this.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(other){
+        other.classList.remove('open');
+        var btn = other.querySelector('.faq-question');
+        if(btn){ btn.setAttribute('aria-expanded', 'false'); }
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        this.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  updateBg();
+  applyLanguage('en');
+</script>
+
+</body>
+</html>
